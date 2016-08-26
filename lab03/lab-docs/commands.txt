@@ -1,0 +1,28 @@
+[root@dev24 lab-docs]# make
+make -C /lib/modules/`uname -r`/build M=/data/kernel-linkedin/lab03/lab-docs
+modules
+make[1]: Entering directory `/usr/src/kernels/2.6.32-431.el6.x86_64'
+  CC [M]  /data/kernel-linkedin/lab03/lab-docs/lab.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+WARNING: modpost: missing MODULE_LICENSE() in
+/data/kernel-linkedin/lab03/lab-docs/lab.o
+see include/linux/module.h for more information
+  CC      /data/kernel-linkedin/lab03/lab-docs/lab.mod.o
+  LD [M]  /data/kernel-linkedin/lab03/lab-docs/lab.ko.unsigned
+  NO SIGN [M] /data/kernel-linkedin/lab03/lab-docs/lab.ko
+make[1]: Leaving directory `/usr/src/kernels/2.6.32-431.el6.x86_64'
+[root@dev24 lab-docs]# ls
+Makefile        lab-docs  lab.ko           lab.mod.c  lab.o
+Module.symvers  lab.c     lab.ko.unsigned  lab.mod.o  modules.order
+[root@dev24 lab-docs]# modinfo -a lab.ko
+firstname lastname
+[root@dev24 lab-docs]# modinfo -d lab.ko
+A very simple loadable module
+[root@dev24 lab-docs]# modinfo lab.ko
+filename:       lab.ko
+description:    A very simple loadable module
+author:         firstname lastname
+srcversion:     3B2DE3E717F451818BDA5CA
+depends:        
+vermagic:       2.6.32-431.el6.x86_64 SMP mod_unload modversions 

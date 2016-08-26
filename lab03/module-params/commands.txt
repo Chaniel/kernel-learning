@@ -1,0 +1,22 @@
+[root@dev24 module-params]# modinfo ./lab.ko
+filename:       ./lab.ko
+description:    A very simple loadable module
+author:         firstname lastname
+srcversion:     7B5F188F506827BB0AEA000
+depends:        
+vermagic:       2.6.32-431.el6.x86_64 SMP mod_unload modversions 
+parm:           number:A simple integer modifiable parameter (int)
+parm:           word:A simple string modifiable parameter (charp)
+[root@dev24 module-params]# insmod lab.ko
+[root@dev24 module-params]# dmesg | tail -2
+The module is now loaded
+number=24601 word=blueberry
+[root@dev24 module-params]# rmmod lab.ko
+[root@dev24 module-params]# dmesg | tail -2
+number=24601 word=blueberry
+The module is now unloaded
+[root@dev24 module-params]# insmod ./lab.ko number=1234 word="apple"
+[root@dev24 module-params]# dmesg | tail -2
+The module is now loaded
+number=1234 word=apple
+
