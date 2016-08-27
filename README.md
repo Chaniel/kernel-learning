@@ -20,7 +20,22 @@ can count time
 ### Linux booting sequence
 POST --> DISK MBR 446B(bootloader(grub)) --> kernel(vmlinuz) --> (initrd(initramfs.img,init)) --> (ROOTFS)/sbin/init(/etc/inittab, /etc/fstab, /etc/rc.d/) 
 
+### kernel related commands
 
+lsmod
+insmod
+modinfo
+aliases
+vermagic
+modprobe
+dmesg
+
+### Kernel File Location
+kernel: 
+    /boot/vmlinuz
+    /boot/initrd
+kernel modules:
+    /lib/modules/`uname -r`
 
 
 
