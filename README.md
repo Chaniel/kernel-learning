@@ -1,5 +1,7 @@
-# kernel learning
-### kernel compile
+# Linux Kernel Learning
+
+## Kernel Compile
+
 0. dependencies
     yum groupinstall "Development Tools" "Development Libraries" -y
 1. generate .config file
@@ -14,13 +16,13 @@
 ** time make install **
 can count time
 
-### kernel development
+## Kernel Development
     check lab03 dir
 
-### Linux booting sequence
+## Linux Booting Sequence
 POST --> DISK MBR 446B(bootloader(grub)) --> kernel(vmlinuz) --> (initrd(initramfs.img,init)) --> (ROOTFS)/sbin/init(/etc/inittab, /etc/fstab, /etc/rc.d/) 
 
-### kernel related commands
+## Kernel Related Commands
 
 lsmod
 insmod
@@ -30,7 +32,7 @@ vermagic
 modprobe
 dmesg
 
-### Kernel File Location
+## Kernel File Location
 kernel: 
     /boot/vmlinuz
     /boot/initrd
