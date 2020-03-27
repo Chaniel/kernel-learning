@@ -3,18 +3,29 @@
 ## Kernel Compile
 
 0. dependencies
-    yum groupinstall "Development Tools" "Development Libraries" -y
+```
+yum groupinstall "Development Tools" "Development Libraries" -y
+```
 1. generate .config file. 
-    make menuconfig
+```
+make menuconfig
+```
 2. compile  
-    make
+```
+make
+```
 3. install modules. 
-    make modules_install
+```
+make modules_install
+```
 4. install kernel. 
-    make install
-
-** time make install **. 
-can count time
+```
+make install
+```
+count installation time
+```
+time make install
+```
 
 ## Kernel Development
 ```
